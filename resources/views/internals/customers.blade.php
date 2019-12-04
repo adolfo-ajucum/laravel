@@ -6,10 +6,18 @@
         <div class="input-group">
         <input type="text" name="name">
         </div>
+        @if ($errors->any())
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li style = "color:red">{{ $error }}</li>
+              @endforeach
+          </ul>
+        @endif
         <button type="submit">Add Customer</button>
 
         @csrf
     </form>
+
     <ul>
         @foreach ($customers as $customer)
         <li>{{ $customer->name }}</li>
