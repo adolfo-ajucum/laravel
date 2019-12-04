@@ -23,4 +23,4 @@ Route::get('about', function(){
     return view('about');
 });
 
-Route::get('custumers','CustomersController@list');
+Route::get('customers','CustomersController@list');
