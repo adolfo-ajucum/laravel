@@ -24,3 +24,4 @@ Route::get('about', function(){
 });
 
 Route::get('customers','CustomersController@list');
+Route::post('customers', 'CustomersController@store');
