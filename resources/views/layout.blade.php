@@ -12,7 +12,9 @@
 
 <body>
 
-    <ul class="nav">
+
+    <div class="container">
+    <ul class="nav py-3">
         <li class="nav-item">
             <a class="nav-link active" href="/">Home</a>
         </li>
@@ -26,7 +28,6 @@
             <a class="nav-link" href="customers">Customer List</a>
         </li>
     </ul>
-    <div class="container">
         @yield('content')
     </div>
 
