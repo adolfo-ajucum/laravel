@@ -12,3 +12,8 @@ npm-debug.log
 yarn-error.log
 .editorconfig
 .env.example
+.idea/vcs.xml
+.idea/my-firts-project.iml
+.idea/modules.xml
+.idea/php.xml
+.idea/misc.xml
