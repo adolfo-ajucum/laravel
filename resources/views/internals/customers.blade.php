@@ -54,8 +54,6 @@
         @endforeach
     </ul>
     </div>
-
-<div class="row">
     <div class="col-6">
     <h3>Inactive customers</h3>
     <ul>
