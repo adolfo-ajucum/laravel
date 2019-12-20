@@ -31,6 +31,16 @@
             <option value="0">Inactive</option>
         </select>
         </div>
+
+        <div class="form-group">
+        <label for="company_id">Company</label>
+        <select name="company_id" id="company_id" class="form-control">
+         @foreach ($companies as $company)
+        <option value="{{ $company-> id}}"> {{$company->name}}</option>
+         @endforeach
+        </select>
+        </div>
+        
         @if ($errors->any())
           <ul>
               @foreach ($errors->all() as $error)
@@ -50,7 +60,7 @@
     <h3>Active customers</h3>
     <ul>
         @foreach ($activeCustomers as $activeCustomers)
-        <li>{{ $activeCustomers->name }} <span class="text-muted"> {{ $activeCustomers->email}}</span></li>
+        <li>{{ $activeCustomers->name }} <span class="text-muted"> {{ $activeCustomers->company->name}}</span></li>
         @endforeach
     </ul>
     </div>
@@ -58,8 +68,20 @@
     <h3>Inactive customers</h3>
     <ul>
         @foreach ($inactiveCustomers as $inactiveCustomers)
-        <li>{{ $inactiveCustomers->name }} <span class="text-muted"> {{ $inactiveCustomers->email}}</span></li>
+        <li>{{ $inactiveCustomers->name }} <span class="text-muted"> {{ $inactiveCustomers->company->name}}</span></li>
         @endforeach
     </ul>
+</div>
+
+<div class="row">
+    <div class="col-12">
+    @foreach($companies as $company)
+    <h3>{{ $company-> name}}</h3>
+
+        @foreach($company->customers as $customer)
+        <li>{{ $customer->name}}</li>
+        @endforeach
+    @endforeach
+    </div>
 </div>
 @endsection
