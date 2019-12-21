@@ -1,11 +1,11 @@
 <label for="name">Name</label>
 <div class="form-group">
-    <input type="text" name="name" value="{{old('name')}}" class="form-control">
+    <input type="text" name="name" value="{{old('name') ?? $customer->name}} " class="form-control">
 </div>
 
 <label for="email">Email</label>
 <div class="form-group">
-    <input type="email" name="email" value="{{old('email')}}" class="form-control">
+    <input type="email" name="email" value="{{old('email') ?? $customer->email}}" class="form-control">
 </div>
 
 <div class="form-group">
