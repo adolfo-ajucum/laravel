@@ -8,16 +8,21 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
-    public function list(){
+    public function index(){
         //$customers = Customer::all();
         $activeCustomers = Customer::active()-> get();
         $inactiveCustomers = Customer::inactive() ->get();
-        $companies =  Company::all();
+
 
        // dd($customers);
 
-        return view('internals.customers', compact('activeCustomers', 'inactiveCustomers', 'companies'));
-        
+        return view('customers.index', compact('activeCustomers', 'inactiveCustomers'));
+
+    }
+
+    public function create(){
+        $companies =  Company::all();
+        return view('customers.create', compact('companies'));
     }
     public function store()
     {
@@ -27,9 +32,9 @@ class CustomersController extends Controller
             'active' => 'required',
             'company_id' => 'required',
         ]);
-    
-        Customer::create($data); 
-     
-        return back();
+
+        Customer::create($data);
+
+        return redirect('customers');
     }
 }
