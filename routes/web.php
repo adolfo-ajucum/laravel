@@ -23,9 +23,15 @@ Route::get('about', function(){
     return view('about');
 });
 
+/*
+ * Using the convention we can use one line like under this comments.
 Route::get('customers','CustomersController@index');
 Route::get('customers/create','CustomersController@create');
 Route::post('customers', 'CustomersController@store');
 Route::get('customers/{customer}', 'CustomersController@show');
 Route::get('customers/{customer}/edit', 'CustomersController@edit');
 Route::patch('customers/{customer}', 'CustomersController@update');
+Route::delete('customers/{customer}', 'CustomersController@destroy');
+*/
+
+Route::resource('customers', 'CustomersController');
