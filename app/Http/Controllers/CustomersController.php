@@ -9,14 +9,9 @@ use Illuminate\Http\Request;
 class CustomersController extends Controller
 {
     public function index(){
-        //$customers = Customer::all();
-        $activeCustomers = Customer::active()-> get();
-        $inactiveCustomers = Customer::inactive() ->get();
+        $customers = Customer::all();
 
-
-       // dd($customers);
-
-        return view('customers.index', compact('activeCustomers', 'inactiveCustomers'));
+        return view('customers.index', compact('customers'));
 
     }
 
