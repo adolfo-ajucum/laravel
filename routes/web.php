@@ -18,10 +18,7 @@ Route::get('/', function () {
 Route::get('contact', 'ContactFormController@create');
 Route::post('contact', 'ContactFormController@store');
 
-
-Route::get('about', function(){
-    return view('about');
-});
+Route::view('about', 'about')->middleware('test');
 
 /*
  * Using the convention we can use one line like under this comments.
